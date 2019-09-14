@@ -39,5 +39,5 @@ class AppImageToolConan(ConanFile):
         self.copy("appimagetool", dst="bin", keep_path=False)
 
     def package_info(self):
-        self.output.info("Using appimagetool" % self.version[1])
+        self.output.info("Using appimagetool-%s-%s.AppImage" % (self.version[1:], self.settings.arch_build))
         self.env_info.path.append(os.path.join(self.package_folder, "bin"))
